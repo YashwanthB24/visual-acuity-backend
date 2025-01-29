@@ -7,12 +7,14 @@ import whisper
 app = Flask(__name__)
 CORS(app)
 
+model = "tiny.en"
+audio_model = whisper.load_model(model)
+
 @app.route("/transcribe", methods=["POST"])
 def transcribe():
     if request.method == "POST":
         # Use small model and English language by default
-        model = "tiny.en"
-        audio_model = whisper.load_model(model)
+
 
         temp_dir = tempfile.mkdtemp()
         save_path = os.path.join(temp_dir, "temp.wav")
