@@ -12,7 +12,7 @@ CORS(app)
 def transcribe():
     if request.method == "POST":
         # Use small model and English language by default
-        model = "small.en"
+        model = "tiny.en"
 
         audio_model = whisper.load_model(model)
         temp_dir = tempfile.mkdtemp()
