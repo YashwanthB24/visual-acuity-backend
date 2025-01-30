@@ -8,4 +8,3 @@ git+https://github.com/openai/whisper.git --extra-index-url https://download.pyt
 torch
 flask
 flask_cors
-gunicorn>=23.0.0
